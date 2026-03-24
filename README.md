@@ -3,7 +3,7 @@
 Extract structured job listings from arbeitsagentur.de — Germany's official federal employment portal with 1M+ active listings. Includes detail enrichment, employer profiles, contact data, incremental monitoring, and compact output for AI-agent workflows.
 
 Available on:
-- **Apify:** https://apify.com/blackfalcondata/arbeitsagentur-jobs-feed
+- **Apify:** https://apify.com/blackfalcondata/arbeitsagentur-scraper
 
 ## Example request
 
@@ -85,7 +85,7 @@ Example input:
 ## Documentation
 
 Full documentation, input/output reference, and sample output:
-https://apify.com/blackfalcondata/arbeitsagentur-jobs-feed
+https://apify.com/blackfalcondata/arbeitsagentur-scraper
 
 ## Related
 
