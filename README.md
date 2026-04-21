@@ -45,54 +45,30 @@ Example input:
 
 ## Key features
 
-- Structured core listings with geo-coordinates, postal code, and federal state
-- Full job description and employer profile enrichment
-- Contact enrichment: name, email, phone, application URL
-- Incremental mode for scheduled monitoring (new/changed jobs only)
-- Smart employer resolution (e.g. "BMW" → "BMW AG" → 666 results)
-- Compact output mode for AI-agent and MCP workflows
-- Description truncation for token budget control
-- Bundesland filtering across all 16 German federal states
 
-## Filters
+**Search with filters** — Search by keyword and location. Filter by contract type, job type, work type, and more.
 
-- Query (keyword or job title)
-- Location (city or region)
-- Federal state (Bundesland)
-- Contract type (permanent / fixed-term)
-- Work type (full-time / part-time / home office / mini job / shift)
-- Job type (employment / apprenticeship / internship / self-employment)
-- Remote only
-- Published within N days
-- Employer name
-- Search radius (km)
+**Multiple input modes** — full (all results) or incremental (new/changed only). Switch modes without re-scraping.
 
-## Pricing
+**Detail enrichment** — Fetch full job descriptions, structured metadata for each listing.
 
-- $0.01 per run start
-- $0.002 per job listing
+**Change classification** — Track cross-run repost detection across runs. Build audit trails of how listings evolve over time.
 
-## Use cases
+**Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
 
-- Recruitment and staffing
-- Sales intelligence
-- Labour market research
-- Job aggregation platforms
-- Employer profiling
-- Geographic analysis
-- Change monitoring pipelines
+**Description truncation** — Cap description length per listing to control output size and cost.
 
-## Documentation
+**Result cap** — Stop after N listings (up to 500). Set to 0 for the full catalog.
 
-Full documentation, input/output reference, and sample output:
-https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi
+**Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
 
-## Related
+**Structured data** — Clean JSON output with consistent field naming. All fields always present — `null` when unavailable, never omitted.
 
-- [StepStone Jobs API](https://github.com/BlackFalconData-org/stepstone-jobs-api) — search and extract job listings from 18 StepStone Group portals
-- [Indeed Jobs Feed](https://github.com/BlackFalconData-org/indeed-jobs-feed) — extract job listings from Indeed
-- [Glassdoor Jobs Feed](https://github.com/BlackFalconData-org/glassdoor-jobs-feed) — extract job listings from Glassdoor
-- [Company Jobs Tracker](https://github.com/BlackFalconData-org/company-jobs-tracker-api) — track new and removed job listings per company
+---
+
+## About Black Falcon Data
+
+Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
 
 ## Output fields
 
@@ -176,7 +152,18 @@ One object per listing. Here is a real example from a production run:
 
 *Truncated — full records contain 52 fields. See Output fields for the complete schema.*
 
-**[Try Arbeitsagentur Scraper - German Jobs now — $5 free credit, no credit card →](https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi)**
+**[Try Arbeitsagentur Scraper - German Jobs now — $5 free credit, no credit card →](https://apify.com/blackfalcondata/arbeitsagentur-jobs-feed?fpr=1h3gvi)**
+
+## Pricing
+
+Pay only for what you extract. No subscription required — Apify's free $5 credit covers thousands of results.
+
+| Event | Price (USD) |
+| --- | --- |
+| Actor Start | $0.01 |
+| Result | $0.002 |
+
+See the [actor on Apify](https://apify.com/blackfalcondata/arbeitsagentur-jobs-feed?fpr=1h3gvi) for current pricing.
 
 ## Getting started with Apify
 
@@ -189,7 +176,3 @@ New to Apify? [Create a free account with $5 credit](https://console.apify.com/s
 Need more volume? [See pricing](https://apify.com/pricing?fpr=1h3gvi).
 
 ---
-
-## About Black Falcon Data
-
-Black Falcon Data builds production-grade web scrapers for job boards and marketplace data. Browse our full actor catalog at [www.blackfalcondata.com](https://www.blackfalcondata.com).
