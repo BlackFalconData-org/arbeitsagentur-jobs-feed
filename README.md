@@ -1,9 +1,9 @@
 # Arbeitsagentur Jobs Feed
 
-Extract structured job listings from arbeitsagentur.de — Germany's official federal employment portal with 1M+ active listings. Includes detail enrichment, employer profiles, contact data, incremental monitoring, and compact output for AI-agent workflows.
+Extract structured job listings from arbeitsagentur.de — Germany's official federal employment portal with 1M+ active listings. Includes detail enrichment, employer profiles, salary data, geo-coordinates, email/phone extraction, incremental monitoring, and compact output for AI-agent workflows. Scrape by search, or paste specific job URLs.
 
 Available on:
-- **Apify:** https://apify.com/blackfalcondata/arbeitsagentur-scraper?fpr=1h3gvi
+- **Apify:** https://apify.com/blackfalcondata/arbeitsagentur-jobs-feed?fpr=1h3gvi
 
 ## Example request
 
@@ -38,15 +38,19 @@ Example input:
   "publishedDate": "2026-03-19",
   "portalUrl": "https://www.arbeitsagentur.de/jobsuche/suche?id=10001-1002790098-S",
   "description": "Wir suchen zum nächstmöglichen Zeitpunkt examinierte Gesundheits- und Krankenpfleger/in...",
-  "contactName": "Manuela Götz",
-  "contactEmail": "bewerbung@kinderkrankenpflege-goetz.de"
+  "extractedEmails": ["bewerbung@kinderkrankenpflege-goetz.de"],
+  "extractedPhones": ["+49 89 1234567"]
 }
 ```
 
 ## Key features
 
 
-**Search with filters** — Search by keyword and location. Filter by contract type, job type, work type, and more.
+**Search with filters** — Search by keyword and location. Filter by contract type, job type, work type, federal state, radius, disability-suitable, and career-changer listings. Sort by relevance, date, or distance.
+
+**Paste-mode (URL list)** — Skip search entirely: paste specific arbeitsagentur.de job URLs and scrape exactly those listings.
+
+**Email + phone extraction** — Best-effort `extractedEmails` and `extractedPhones` mined from each job description, plus `extractedUrls` and structured `socialProfiles`.
 
 **Multiple input modes** — full (all results) or incremental (new/changed only). Switch modes without re-scraping.
 
@@ -72,7 +76,7 @@ Black Falcon Data builds production-grade web scrapers for job boards and market
 
 ## Output fields
 
-Every listing returns the same 52-field schema. Missing values are `null` — never omitted.
+Every listing returns the same structured schema. Missing values are `null` — never omitted.
 
 - `referenceId`
 - `title`
@@ -119,12 +123,10 @@ Every listing returns the same 52-field schema. Missing values are `null` — ne
 - `employerBenefits`
 - `employerSocialMedia`
 - `employerContactInfo`
-- `contactName`
-- `contactEmail`
-- `contactPhone`
-- `employerAddress`
-- `applyUrl`
-- `applyMethod`
+- `extractedEmails`
+- `extractedPhones`
+- `extractedUrls`
+- `socialProfiles`
 - `scrapedAt`
 
 ## Sample output
