@@ -46,23 +46,6 @@ Example input:
 ## Key features
 
 
-**Search with filters** — Search by keyword and location. Filter by contract type, job type, work type, federal state, radius, disability-suitable, and career-changer listings. Sort by relevance, date, or distance.
-
-**Paste-mode (URL list)** — Skip search entirely: paste specific arbeitsagentur.de job URLs and scrape exactly those listings.
-
-**Email + phone extraction** — Best-effort `extractedEmails` and `extractedPhones` mined from each job description, plus `extractedUrls` and structured `socialProfiles`.
-
-**Multiple input modes** — full (all results) or incremental (new/changed only). Switch modes without re-scraping.
-
-**Detail enrichment** — Fetch full job descriptions, structured metadata for each listing.
-
-**Change classification** — Track cross-run repost detection across runs. Build audit trails of how listings evolve over time.
-
-**Compact output** — Emit core fields only (AI-agent / MCP-friendly). Keeps response size small for LLM workflows.
-
-**Description truncation** — Cap description length per listing to control output size and cost.
-
-**Result cap** — Stop after N listings (up to 500). Set to 0 for the full catalog.
 
 **Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
 
