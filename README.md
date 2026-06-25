@@ -48,6 +48,8 @@ Example input:
 
 
 
+
+
 **Export anywhere** — Download as JSON, CSV, or Excel. Stream via Apify API, webhooks, or integrations with Make, Zapier, Airbyte, Keboola.
 
 **Structured data** — Clean JSON output with consistent field naming. All fields always present — `null` when unavailable, never omitted.
